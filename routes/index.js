@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res){
     course = req.body.course;
 
-    MongoClient.connect(url || mongodbUri, function(err, db) {
+    MongoClient.connect(mongodbUri, function(err, db) {
       console.log(course);
       assert.equal(null, err);
       findPrereqs(db, course, function(response) {
