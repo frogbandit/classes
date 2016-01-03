@@ -1,0 +1,128 @@
+{
+  "courses": [
+
+      {"course": "ME3011",
+      "prerequisites": [
+        { "courses": [{"course": "ME214 C-" }],
+           "action_needed": ""},
+
+        { "courses": [{"course": "ME2141 C-" }],
+           "action_needed": ""}
+      ]},
+
+
+      {"course": "ME3111",
+      "prerequisites": [
+        { "courses": [{"course": "MAT214", "grade": "C" }, { "course": "ME215", "grade": "C-" }],
+           "action_needed": ""},
+
+        { "courses": [{"course": "MAT2141", "grade": "C" }, { "course": "MAT215", "grade": "C-" }],
+           "action_needed": ""},
+
+        { "courses": [{"course": "MAT214", "grade": "C" }, { "course": "MAT2150", "grade": "C-" }],
+           "action_needed": ""},
+
+        { "courses": [{"course": "MAT2141", "grade": "C" }, { "course": "MAT2150", "grade": "C-" }],
+           "action_needed": ""}
+      ]},
+
+
+      {"course": "ME3121",
+      "prerequisites": [
+        { "courses": [{"course": "ME301", "grade": "C-" }, { "course": "ME311", "grade": "C-" }],
+           "action_needed": "ME 3011_pre(on-line), ME 3111 (on-line)"},
+
+        { "courses": [{"course": "ME301", "grade": "C-" }, { "course": "ME3111", "grade": "C-" }],
+           "action_needed": "ME 3011_pre(on-line)"},
+
+        { "courses": [{"course": "ME3011", "grade": "C-" }, { "course": "ME311", "grade": "C-" }],
+           "action_needed": "ME 3111 (on-line)"},
+
+        { "courses": [{"course": "ME3011", "grade": "C-" }, { "course": "ME3111", "grade": "C-" }],
+           "action_needed": ""}
+      ]},
+
+
+      {"course": "ME3131L",
+      "prerequisites": [
+        { "courses": [{"course": "ME312", "grade": "Co-req" }, { "course": "GE A3", "grade": "C-" }],
+           "action_needed": "GWT"},
+
+        { "courses": [{"course": "ME3121", "grade": "Co-req" }, { "course": "GE A3", "grade": "C-" }],
+           "action_needed": "GWT"},
+
+        { "courses": [{"course": "ME312", "grade": "Co-req" }, { "course": "GE A3", "grade": "C-" }],
+           "action_needed": "GWT"},
+
+        { "courses": [{"course": "ME3121", "grade": "Co-req" }, { "course": "GE A3", "grade": "C-" }],
+           "action_needed": "GWT"}
+      ]},
+
+      {"course": "ME4150",
+      "prerequisites": [
+        { "courses": [{"course": "MAT216", "grade": "C" }, { "course": "ME301", "grade": "C-" }],
+           "action_needed": "ME311 C-"},
+
+        { "courses": [{"course": "MAT224", "grade": "C" }, { "course": "ME301", "grade": "C-" }],
+           "action_needed": "ME311 C-"},
+
+        { "courses": [{"course": "?", "grade": "C" }, { "course": "ME301", "grade": "C-" }],
+           "action_needed": "ME311 C-"},
+
+        { "courses": [{"course": "MAT216", "grade": "C" }, { "course": "ME3011", "grade": "C-" }],
+           "action_needed": "ME311 C-"},
+
+        { "courses": [{"course": "MAT216", "grade": "C" }, { "course": "ME301", "grade": "C-" }],
+           "action_needed": "ME3111 C-"},
+
+        { "courses": [{"course": "MAT216", "grade": "C" }, { "course": "ME3011", "grade": "C-" }],
+           "action_needed": "ME3111 C-"},
+
+        { "courses": [{"course": "MAT224", "grade": "C" }, { "course": "ME3011", "grade": "C-" }],
+           "action_needed": "ME311 C-"},
+
+        { "courses": [{"course": "MAT224", "grade": "C" }, { "course": "ME301", "grade": "C-" }],
+           "action_needed": "ME3111 C-"},
+
+        { "courses": [{"course": "MAT224", "grade": "C" }, { "course": "ME3011", "grade": "C-" }],
+           "action_needed": "ME3111 C-"},
+
+        { "courses": [{"course": "?", "grade": "C" }, { "course": "ME3011", "grade": "C-" }],
+           "action_needed": "ME311 C-"},
+
+        { "courses": [{"course": "?", "grade": "C" }, { "course": "ME301", "grade": "C-" }],
+           "action_needed": "ME3111 C-"},
+
+        { "courses": [{"course": "?", "grade": "C" }, { "course": "ME3011", "grade": "C-" }],
+           "action_needed": "ME3111 C-"}
+      ]},
+
+      {"course": "ME4180/L",
+      "prerequisites": [
+        { "courses": [{"course": "ME302", "grade": "C-" }, { "course": "ME312", "grade": "C-" }],
+           "action_needed": "ME415 C-"},
+
+        { "courses": [{"course": "ME3121", "grade": "C-" }, { "course": "ME415", "grade": "C-" }],
+           "action_needed": ""},
+
+        { "courses": [{"course": "ME302", "grade": "C-" }, { "course": "ME312", "grade": "C-" }],
+           "action_needed": "ME4150 C-"},
+
+        { "courses": [{"course": "ME3121", "grade": "C-" }, { "course": "ME4150", "grade": "C-" }],
+           "action_needed": ""}
+      ]},
+
+      {"course": "ME4271",
+      "prerequisites": [
+        { "courses": [{"course": "ME302", "grade": "C-" }, { "course": "ME415", "grade": "C-" }],
+           "action_needed": ""},
+
+        { "courses": [{"course": "ME3121", "grade": "C-" }, { "course": "ME415", "grade": "C-" }],
+           "action_needed": ""},
+
+        { "courses": [{"course": "ME302", "grade": "C-" }, { "course": "ME4150", "grade": "C-" }],
+           "action_needed": ""}
+      ]}
+
+  ]
+}

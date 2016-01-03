@@ -1,0 +1,27 @@
+{
+  "name": "classes",
+  "version": "1.0.0",
+  "description": "Classes for students",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frogbandit/classes.git"
+  },
+  "author": "James Xue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frogbandit/classes/issues"
+  },
+  "homepage": "https://github.com/frogbandit/classes",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {}
+}
