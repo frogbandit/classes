@@ -4,6 +4,8 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 var url = 'mongodb://localhost:27017/classes';
+// var mongodbUri = 'mongodb://jamesxue100:abcd@ds037185.mongolab.com:37185/courses';
+var mongodbUri = 'mongodb://heroku_d5x2mctr:ar6kctuibnmb57crd2tv5s73kv@ds037205.mongolab.com:37205/heroku_d5x2mctr';
 
 
 /* GET home page. */
@@ -14,7 +16,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res){
     course = req.body.course;
 
-    MongoClient.connect(url, function(err, db) {
+    MongoClient.connect(url || mongodbUri, function(err, db) {
       console.log(course);
       assert.equal(null, err);
       findPrereqs(db, course, function(response) {
