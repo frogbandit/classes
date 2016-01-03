@@ -18,7 +18,9 @@
   "homepage": "https://github.com/frogbandit/classes",
   "dependencies": {
     "body-parser": "^1.14.2",
+    "ejs": "^2.3.4",
     "express": "^4.13.3",
+    "mongodb": "^2.1.2",
     "mongoose": "^4.1.11"
   },
   "devDependencies": {}
