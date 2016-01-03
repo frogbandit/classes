@@ -4,7 +4,6 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser'); 
 var routes = require('./routes/index');
 
-MONGOLAB_URI='mongodb://jamesxue100:abcd@ds037185.mongolab.com:37185/courses';
 mongoose.connect(process.env.MONGOLAB_URI, function (error) {
     if (error) console.error(error);
     else console.log('mongo connected'); 
