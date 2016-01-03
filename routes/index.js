@@ -17,17 +17,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res){
-    console.log(course);
     name = req.body.course;
 
     // MongoClient.connect(mongodbUri, function(err, db) {
     // findPrereqs(db, course, function(response) {
       course.findPrereqs(name, function(response) {
-          console.log('hello');
           courses = response[0];
           actions = response[1]; 
-          console.log(courses);
-          console.log(actions);
           // db.close();
           res.status(200).json({success:true, content:[courses, actions]}).end();
       });
