@@ -8,7 +8,7 @@ var url = 'mongodb://localhost:27017/classes';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Classes' });
+  res.render('index', { title: 'Courses' });
 });
 
 router.post('/', function(req, res){
