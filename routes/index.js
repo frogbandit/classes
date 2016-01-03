@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var course = require('../models/course');
+
+// MongoClient is for local MongoDB database
 // var MongoClient = require('mongodb').MongoClient;
 // var assert = require('assert');
 // var ObjectId = require('mongodb').ObjectID;
@@ -19,9 +21,7 @@ router.post('/', function(req, res){
     name = req.body.course;
 
     // MongoClient.connect(mongodbUri, function(err, db) {
-      console.log(name);
-    //   assert.equal(null, err);
-    //   // findPrereqs(db, course, function(response) {
+    // findPrereqs(db, course, function(response) {
       course.findPrereqs(name, function(response) {
           console.log('hello');
           courses = response[0];
@@ -31,33 +31,31 @@ router.post('/', function(req, res){
           // db.close();
           res.status(200).json({success:true, content:[courses, actions]}).end();
       });
-      // console.log(courses);
-      
     // });   
 });
 
-var findPrereqs = function(db, course, callback) {
-    course_list = []
-    action_list = []
-    var cursor =db.collection('classes').find({ "courses.course": course } );
-    cursor.each(function(err, doc) {
-      assert.equal(err, null);
-      if (doc != null) {
-         for (i = 0; i < doc.courses.length; i++){
-          if (doc.courses[i].course == course){
-            prereqs = doc.courses[i].prerequisites;
-            for (j = 0; j < prereqs.length; j++){
-              courses = prereqs[j].courses;
-              action = prereqs[j].action_needed;
-              course_list.push(courses);
-              action_list.push(action);
-            }
-          }         
-        }
-        return callback([course_list, action_list]);
-      } 
-    });
-};
+// var findPrereqs = function(db, course, callback) {
+//     course_list = []
+//     action_list = []
+//     var cursor =db.collection('classes').find({ "courses.course": course } );
+//     cursor.each(function(err, doc) {
+//       assert.equal(err, null);
+//       if (doc != null) {
+//          for (i = 0; i < doc.courses.length; i++){
+//           if (doc.courses[i].course == course){
+//             prereqs = doc.courses[i].prerequisites;
+//             for (j = 0; j < prereqs.length; j++){
+//               courses = prereqs[j].courses;
+//               action = prereqs[j].action_needed;
+//               course_list.push(courses);
+//               action_list.push(action);
+//             }
+//           }         
+//         }
+//         return callback([course_list, action_list]);
+//       } 
+//     });
+// };
 
 module.exports = router;
 

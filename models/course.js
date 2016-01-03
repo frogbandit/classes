@@ -15,21 +15,10 @@ var course = (function course() {
   	console.log('hi');
     course_list = []
     action_list = []
-    // var cursor =courseModel.find({ "courses.course": course } );
     courseModel.find({ "courses.course": course}, function(err, res){
-    // cursor.each(function(err, doc) {
-      // assert.equal(err, null);
+    	
       res = JSON.stringify(res);
-      // console.log(JSON.stringify(res));
-
-      console.log(res);
       res = JSON.parse(res)[0];
-      console.log(res);
-      // console.log(typeof(res[0]));
-      // console.log(res[0]);
-      // console.log(res[0].courses);
-
-
       if (res != null) {
          for (i = 0; i < res.courses.length; i++){
           if (res.courses[i].course == course){
