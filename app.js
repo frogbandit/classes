@@ -1,7 +1,13 @@
 var express = require('express')//.createServer(); // 
 var path = require("path");
+var mongoose = require('mongoose');
 var bodyParser = require('body-parser'); 
 var routes = require('./routes/index');
+
+mongoose.connect(process.env.MONGOLAB_URI, function (error) {
+    if (error) console.error(error);
+    else console.log('mongo connected'); 
+});
 
 var app = express();
 
@@ -10,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 3000));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
