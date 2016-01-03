@@ -12,11 +12,10 @@ var course = (function course() {
 
 
   that.findPrereqs = function(course, callback) {
-  	console.log('hi');
     course_list = []
     action_list = []
     courseModel.find({ "courses.course": course}, function(err, res){
-    	
+
       res = JSON.stringify(res);
       res = JSON.parse(res)[0];
       if (res != null) {
@@ -31,8 +30,6 @@ var course = (function course() {
             }
           }         
         }
-        console.log(course_list);
-        console.log(action_list);
         return callback([course_list, action_list]);
       } 
     });
