@@ -6,7 +6,7 @@ var routes = require('./routes/index');
 
 var mongodbUri = 'mongodb://heroku_d5x2mctr:ar6kctuibnmb57crd2tv5s73kv@ds037205.mongolab.com:37205/heroku_d5x2mctr'
 
-mongoose.connect(mongodbUri, function (error) {
+mongoose.connect(mongodbUri || 'mongodb://localhost/test', function (error) {
     if (error) console.error(error);
     else console.log('mongo connected'); 
 });
