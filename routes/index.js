@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var ObjectId = require('mongodb').ObjectID;
-var url = 'mongodb://localhost:27017/classes';
-// var mongodbUri = 'mongodb://jamesxue100:abcd@ds037185.mongolab.com:37185/courses';
-var mongodbUri = 'mongodb://heroku_d5x2mctr:ar6kctuibnmb57crd2tv5s73kv@ds037205.mongolab.com:37205/heroku_d5x2mctr';
+var course = require('../models/course');
+// var MongoClient = require('mongodb').MongoClient;
+// var assert = require('assert');
+// var ObjectId = require('mongodb').ObjectID;
+// var url = 'mongodb://localhost:27017/classes';
+// // var mongodbUri = 'mongodb://jamesxue100:abcd@ds037185.mongolab.com:37185/courses';
+// var mongodbUri = 'mongodb://heroku_d5x2mctr:ar6kctuibnmb57crd2tv5s73kv@ds037205.mongolab.com:37205/heroku_d5x2mctr';
 
 
 /* GET home page. */
@@ -14,22 +15,25 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res){
-    course = req.body.course;
+    console.log(course);
+    name = req.body.course;
 
-    MongoClient.connect(mongodbUri, function(err, db) {
-      console.log(course);
-      assert.equal(null, err);
-      findPrereqs(db, course, function(response) {
+    // MongoClient.connect(mongodbUri, function(err, db) {
+      console.log(name);
+    //   assert.equal(null, err);
+    //   // findPrereqs(db, course, function(response) {
+      course.findPrereqs(name, function(response) {
+          console.log('hello');
           courses = response[0];
           actions = response[1]; 
           console.log(courses);
           console.log(actions);
-          db.close();
+          // db.close();
           res.status(200).json({success:true, content:[courses, actions]}).end();
       });
       // console.log(courses);
       
-    });   
+    // });   
 });
 
 var findPrereqs = function(db, course, callback) {
